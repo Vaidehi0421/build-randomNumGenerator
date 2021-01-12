@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Random Number Generator</title>
+        <style>
+            div{
+                background-color: chocolate;
+                height: 400px;
+                width: 400px;
+                margin: auto;
+                color:white;
+                align-content: center;
+                border: 20px solid rgb(0, 0, 0);
+            }
+            button{
+                background-color: chocolate;
+                color:white;
+                margin:auto;
+                display:block;
+            }
+            h1{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Random Number Generator</h1>
+            <div>
+              <h1 id="display" style="font-size: 170px;"></h1>
+            </div>
+            <br>
+            <button id="btn">Click Me!</button>
+        
+        <script >
+            let seed=12
+            const dis=document.querySelector("#display")
+            const btn=document.querySelector("#btn")
+            btn.addEventListener('click',()=>{
+                let x=(seed * seed).toString().padStart(4,"0").slice(1, 3);
+                seed = parseInt(x)+1;
+                dis.innerHTML=seed;
+            })
+        </script>
+    </body>
+</html>
